@@ -25,9 +25,6 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
   <img src="static/banner.png" width="100%" alt="FakeHR Banner"/>
 </p>
 
-| Login / Signup Page | Resume Preview |
-|---------------------|----------------|
-| ![Login](static/screenshot_login.png) | ![Resume](static/screenshot_resume.png) |
 
 ---
 
