@@ -1,7 +1,7 @@
 import os
 import re
-import pdfkit
 from jinja2 import Environment, FileSystemLoader
+from weasyprint import HTML  # ✅ works on Streamlit Cloud
 
 def sanitize_filename(name):
     """Clean the filename to avoid illegal characters and keep it short."""
@@ -35,15 +35,7 @@ def save_resume_as_pdf(name, resume_data, directory="output/resumes"):
     safe_name = sanitize_filename(name)
     pdf_path = os.path.join(directory, f"{safe_name}_Resume.pdf")
 
-    # Detect platform and set wkhtmltopdf path
-    if os.name == 'nt':  # Windows
-        wkhtmltopdf_path = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
-    else:  # Linux/Streamlit Cloud
-        wkhtmltopdf_path = "/usr/bin/wkhtmltopdf"
-
-    config = pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_path)
-
-    # Generate PDF using pdfkit
-    pdfkit.from_string(html_out, pdf_path, configuration=config)
+    # ✅ Generate PDF using WeasyPrint (no external binaries)
+    HTML(string=html_out).write_pdf(pdf_path)
 
     return pdf_path
