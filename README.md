@@ -141,7 +141,7 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 🔐 2. Set up API Key
     Rename .env.example to .env and add your Gemini API key:
 
-    GEMINI_API_KEY=AIzaSyDKsokJFZUNmGiZxWBL_o89lVaz0WZ1NVY
+    GEMINI_API_KEY=gemini_api_key here
 
 
 
