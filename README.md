@@ -66,8 +66,7 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 - [Google Gemini API](https://ai.google.dev) – Resume generation using generative AI
 - [SQLite](https://sqlite.org) – Lightweight local database for users, history, and feedback
 - [pandas](https://pandas.pydata.org/) – Data generation, manipulation, and export (CSV, Excel, JSON)
-- [pdfkit](https://pypi.org/project/pdfkit/) + [wkhtmltopdf](https://wkhtmltopdf.org/) – HTML to PDF conversion for clean, professional resumes
-
+- [WeasyPrint](https://weasyprint.org/) – HTML to PDF conversion for clean, professional resumes
 - [bcrypt](https://pypi.org/project/bcrypt/) – Secure password hashing for authentication
 - [Jinja2](https://palletsprojects.com/p/jinja/) – Resume HTML templating engine
 - [Faker](https://faker.readthedocs.io/) – Realistic employee data generation
