@@ -25,6 +25,22 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
   <img src="static/banner.png" width="100%" alt="FakeHR Banner"/>
 </p>
 
+🔐 Login & Signup
+
+<p align="center"> <img src="static/screenshots/login.png" width="80%" alt="Login Screenshot"/> </p>
+📊 Employee Data Generator
+
+<p align="center"> <img src="static/screenshots/data_generation.png" width="80%" alt="Employee Data Generator"/> </p>
+📄 Resume Preview
+
+<p align="center"> <img src="static/screenshots/resume_preview.png" width="80%" alt="Resume Preview"/> </p>
+🕒 Generation History
+
+<p align="center"> <img src="static/screenshots/history.png" width="80%" alt="History Section"/> </p>
+
+⭐ Feedback Section
+<p align="center"> <img src="static/screenshots/feedback.png" width="80%" alt="Feedback Section"/> </p>
+
 
 ---
 
@@ -74,26 +90,45 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 ---
 
 ## 📂 Project Structure
+      FakeHR/
+      ├── .env.example                  # ✅ Sample env file (do NOT include real keys)
+      ├── .gitignore                   # ✅ Ignores .env, output/, venv/, cache etc.
+      ├── README.md                    # 📘 Project overview
+      ├── requirements.txt             # 📦 Python dependencies
+      ├── app.py                       # 🚀 Main Streamlit app
+      ├── database.py                  # 💾 SQLite DB logic
+      ├── demo.py                      # 🧪 Optional testing/demo file
+      ├── employee_generator.py        # 🧍 Fake employee data logic
+      ├── gemini_resume.py             # 🤖 Resume generation using Gemini
+      ├── generate_pdf.py              # 📄 Convert resume HTML to PDF (WeasyPrint)
+      ├── fakehr.db                    # ⚠️ (ignored in repo) Local DB file
+      ├── users.db                     # ⚠️ (ignored in repo) Optional DB if separate
+      
+      ├── auth/
+      │   └── hashing.py               # 🔐 Password hashing (bcrypt)
+      
+      ├── output/                      # ⚠️ Ignored - Stores generated files
+      │   ├── resumes/
+      │   ├── zips/
+      │   └── generated/
+      
+      ├── static/
+      │   ├── logo.png                 # 🖼️ App logo
+      │   ├── banner.png               # 🏞️ Top banner
+      │   └── screenshots/             # 📸 README images
+      │       ├── login.png
+      │       ├── data_generation.png
+      │       ├── resume_preview.png
+      │       ├── history.png
+      │       └── feedback.png
+      
+      ├── templates/
+      │   └── resume_template.html     # 🎨 HTML template for resumes
+      
+      └── .streamlit/
+          └── config.toml              # 🌗 Theme & layout configs
 
-    /FakeHR
-    ├── app.py                # Main app file
-    ├── employee_generator.py # Data generation logic
-    ├── gemini_resume.py      # Gemini API resume generation
-    ├── generate_pdf.py       # Resume rendering via HTML to PDF
-    ├── database.py           # SQLite helpers
-    ├── auth/
-    │   └── hashing.py        # Password hashing
-    ├── static/
-    │   ├── banner.png        # App banner
-    │   └── logo.png          # Logo icon
-    ├── templates/
-    │   └── resume_template.html
-    ├── output/
-    │   ├── generated/        # CSV/Excel files
-    │   └── resumes/          # PDF resumes
-    ├── .env.example          # Sample env vars
-    ├── requirements.txt      # Python dependencies
-    └── README.md             # This file
+
 
 
 📥 Setup Instructions
