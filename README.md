@@ -22,7 +22,7 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="static/banner.png" width="100%" alt="FakeHR Banner"/>
+  <img src="static/logo.png" width="100%" alt="FakeHR Banner"/>
 </p>
 
 🔐 Login & Signup
