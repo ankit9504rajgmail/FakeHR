@@ -1,12 +1,12 @@
 # 🤖 FakeHR – AI-Powered Synthetic Resume & Employee Data Generator
 
-![Banner](static/banner.png)
+    🔧 Developers testing HR tools
 
 **FakeHR** is a one-stop AI-powered tool designed to generate **realistic fake employee data** and **professional one-page resumes**. It’s perfect for developers, HR tech startups, educators, or anyone who needs synthetic HR data for testing, training, or demos — all without compromising real user data.
 
----
+    📊 Data scientists building recruitment models
 
-## 🚀 Why FakeHR?
+    🛠️ Startups demoing HR tech products
 
 Creating dummy data and resumes for testing HR tools is often time-consuming and lacks realism. FakeHR solves that with:
 
@@ -22,22 +22,17 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="static/logo.png" width="100%" alt="FakeHR Banner"/>
+  <img src="static/banner.png" width="100%" alt="FakeHR Banner"/>
 </p>
 
 🔐 Login & Signup
-
 <p align="center"> <img src="static/screenshots/login.png" width="80%" alt="Login Screenshot"/> </p>
 📊 Employee Data Generator
-
 <p align="center"> <img src="static/screenshots/data_generation.png" width="80%" alt="Employee Data Generator"/> </p>
 📄 Resume Preview
-
 <p align="center"> <img src="static/screenshots/resume_preview.png" width="80%" alt="Resume Preview"/> </p>
 🕒 Generation History
-
 <p align="center"> <img src="static/screenshots/history.png" width="80%" alt="History Section"/> </p>
-
 ⭐ Feedback Section
 <p align="center"> <img src="static/screenshots/feedback.png" width="80%" alt="Feedback Section"/> </p>
 
@@ -65,12 +60,17 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 
 ## 🛠️ Tech Stack
 
-- [Streamlit](https://streamlit.io) – UI framework
-- [Google Gemini API](https://ai.google.dev) – Resume generation
-- [SQLite](https://sqlite.org) – Lightweight database
-- [pandas](https://pandas.pydata.org/) – Data handling
-- [wkhtmltopdf](https://wkhtmltopdf.org) – PDF generation from HTML
-- [bcrypt](https://pypi.org/project/bcrypt/) – Secure password hashing
+## 🛠️ Tech Stack
+
+- [Streamlit](https://streamlit.io) – Frontend/UI framework
+- [Google Gemini API](https://ai.google.dev) – Resume generation using generative AI
+- [SQLite](https://sqlite.org) – Lightweight local database for users, history, and feedback
+- [pandas](https://pandas.pydata.org/) – Data generation, manipulation, and export (CSV, Excel, JSON)
+- [WeasyPrint](https://weasyprint.org/) – HTML to PDF conversion for clean, professional resumes
+- [bcrypt](https://pypi.org/project/bcrypt/) – Secure password hashing for authentication
+- [Jinja2](https://palletsprojects.com/p/jinja/) – Resume HTML templating engine
+- [Faker](https://faker.readthedocs.io/) – Realistic employee data generation
+
 
 ---
 
@@ -90,44 +90,44 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 ---
 
 ## 📂 Project Structure
-      FakeHR/
-      ├── .env.example                  # ✅ Sample env file (do NOT include real keys)
-      ├── .gitignore                   # ✅ Ignores .env, output/, venv/, cache etc.
-      ├── README.md                    # 📘 Project overview
-      ├── requirements.txt             # 📦 Python dependencies
-      ├── app.py                       # 🚀 Main Streamlit app
-      ├── database.py                  # 💾 SQLite DB logic
-      ├── demo.py                      # 🧪 Optional testing/demo file
-      ├── employee_generator.py        # 🧍 Fake employee data logic
-      ├── gemini_resume.py             # 🤖 Resume generation using Gemini
-      ├── generate_pdf.py              # 📄 Convert resume HTML to PDF (WeasyPrint)
-      ├── fakehr.db                    # ⚠️ (ignored in repo) Local DB file
-      ├── users.db                     # ⚠️ (ignored in repo) Optional DB if separate
-      
-      ├── auth/
-      │   └── hashing.py               # 🔐 Password hashing (bcrypt)
-      
-      ├── output/                      # ⚠️ Ignored - Stores generated files
-      │   ├── resumes/
-      │   ├── zips/
-      │   └── generated/
-      
-      ├── static/
-      │   ├── logo.png                 # 🖼️ App logo
-      │   ├── banner.png               # 🏞️ Top banner
-      │   └── screenshots/             # 📸 README images
-      │       ├── login.png
-      │       ├── data_generation.png
-      │       ├── resume_preview.png
-      │       ├── history.png
-      │       └── feedback.png
-      
-      ├── templates/
-      │   └── resume_template.html     # 🎨 HTML template for resumes
-      
-      └── .streamlit/
-          └── config.toml              # 🌗 Theme & layout configs
 
+    FakeHR/
+        ├── .env.example                  # ✅ Sample env file (do NOT include real keys)
+        ├── .gitignore                   # ✅ Ignores .env, output/, venv/, cache etc.
+        ├── README.md                    # 📘 Project overview
+        ├── requirements.txt             # 📦 Python dependencies
+        ├── app.py                       # 🚀 Main Streamlit app
+        ├── database.py                  # 💾 SQLite DB logic
+        ├── demo.py                      # 🧪 Optional testing/demo file
+        ├── employee_generator.py        # 🧍 Fake employee data logic
+        ├── gemini_resume.py             # 🤖 Resume generation using Gemini
+        ├── generate_pdf.py              # 📄 Convert resume HTML to PDF (WeasyPrint)
+        ├── fakehr.db                    # ⚠️ (ignored in repo) Local DB file
+        ├── users.db                     # ⚠️ (ignored in repo) Optional DB if separate
+
+        ├── auth/
+        │   └── hashing.py               # 🔐 Password hashing (bcrypt)
+
+        ├── output/                      # ⚠️ Ignored - Stores generated files
+        │   ├── resumes/
+        │   ├── zips/
+        │   └── generated/
+
+        ├── static/
+        │   ├── logo.png                 # 🖼️ App logo
+        │   ├── banner.png               # 🏞️ Top banner
+        │   └── screenshots/             # 📸 README images
+        │       ├── login.png
+        │       ├── data_generation.png
+        │       ├── resume_preview.png
+        │       ├── history.png
+        │       └── feedback.png
+
+        ├── templates/
+        │   └── resume_template.html     # 🎨 HTML template for resumes
+
+        └── .streamlit/
+            └── config.toml              # 🌗 Theme & layout configs
 
 
 
@@ -141,7 +141,7 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 🔐 2. Set up API Key
     Rename .env.example to .env and add your Gemini API key:
 
-    GEMINI_API_KEY=gemini_api_key here
+    GEMINI_API_KEY=AIzaSyDKsokJFZUNmGiZxWBL_o89lVaz0WZ1NVY
 
 
 
@@ -154,4 +154,3 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 📃 License
 MIT License
-
