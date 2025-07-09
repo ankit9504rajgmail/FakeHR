@@ -344,21 +344,29 @@ def resume_generator_ui():
                 prompt_fields["Job Title"] = employee_data.get("job_profiles", "")
 
         # Generate realistic resume data (JSON)
-        resume_data = generate_resume_with_gemini(prompt_fields)
+        with st.spinner(f"⏳ Generating resume for {employee_data['name']}..."):
+            st.write("🚀 Sending request to Gemini API...")
+            try:
+                resume_data = generate_resume_with_gemini(prompt_fields)
+                st.write("✅ Gemini API response received")
 
-        # Create contact string
-        contact = " | ".join(filter(None, [
-            employee_data.get("email", ""),
-            employee_data.get("phone", ""),
-            employee_data.get("linkedin", "")
-        ]))
+                contact = " | ".join(filter(None, [
+                    employee_data.get("email", ""),
+                    employee_data.get("phone", ""),
+                    employee_data.get("linkedin", "")
+                ]))
 
-        # Generate and save PDF
-        pdf_path = save_resume_as_pdf(employee_data["name"], {
-            **resume_data,
-            "title": prompt_fields.get("Job Title", ""),
-            "contact": contact
-        })
+                pdf_path = save_resume_as_pdf(employee_data["name"], {
+                    **resume_data,
+                    "title": prompt_fields.get("Job Title", ""),
+                    "contact": contact
+                })
+
+            except Exception as e:
+                st.error(f"❌ Error generating resume for {employee_data['name']}: {e}")
+                df.at[index, "resume"] = "❌ Failed"
+                continue
+
 
         # Add preview section
         with st.expander(f"📄 Preview: {employee_data['name']}"):
