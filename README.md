@@ -75,3 +75,48 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 
 ## 📂 Project Structure
 
+    /FakeHR
+    ├── app.py                # Main app file
+    ├── employee_generator.py # Data generation logic
+    ├── gemini_resume.py      # Gemini API resume generation
+    ├── generate_pdf.py       # Resume rendering via HTML to PDF
+    ├── database.py           # SQLite helpers
+    ├── auth/
+    │   └── hashing.py        # Password hashing
+    ├── static/
+    │   ├── banner.png        # App banner
+    │   └── logo.png          # Logo icon
+    ├── templates/
+    │   └── resume_template.html
+    ├── output/
+    │   ├── generated/        # CSV/Excel files
+    │   └── resumes/          # PDF resumes
+    ├── .env.example          # Sample env vars
+    ├── requirements.txt      # Python dependencies
+    └── README.md             # This file
+
+
+📥 Setup Instructions
+
+
+🔧 1. Install dependencies
+        pip install -r requirements.txt
+
+
+🔐 2. Set up API Key
+    Rename .env.example to .env and add your Gemini API key:
+
+    GEMINI_API_KEY=AIzaSyDKsokJFZUNmGiZxWBL_o89lVaz0WZ1NVY
+
+
+
+▶️ 4. Run the app
+streamlit run app.py
+
+
+🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first.
+
+📃 License
+MIT License
+
