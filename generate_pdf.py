@@ -3,10 +3,9 @@ import re
 import pdfkit
 from jinja2 import Environment, FileSystemLoader
 
-# Set this to your local wkhtmltopdf path
-WKHTMLTOPDF_PATH = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+# ✅ Use Linux path for wkhtmltopdf (EC2)
+WKHTMLTOPDF_PATH = "/usr/bin/wkhtmltopdf"
 pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_PATH)
-
 def sanitize_filename(name):
     """Clean the filename to avoid illegal characters and keep it short."""
     name = re.sub(r'[^\w\s-]', '', name)
