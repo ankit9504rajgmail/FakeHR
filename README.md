@@ -18,6 +18,13 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 ✅ **Mobile-friendly interface (Streamlit)**
 
 ---
+## 🚀 Live Demo
+
+🌐 [FakeHR Live on AWS](http://51.21.161.5:8501)
+
+_(Hosted on AWS EC2, runs 24×7)_
+
+---
 
 ## 📸 Screenshots
 
@@ -141,7 +148,7 @@ Creating dummy data and resumes for testing HR tools is often time-consuming and
 🔐 2. Set up API Key
     Rename .env.example to .env and add your Gemini API key:
 
-    GEMINI_API_KEY=AIzaSyDKsokJFZUNmGiZxWBL_o89lVaz0WZ1NVY
+    GEMINI_API_KEY=AIzaSyDWTYZ3NgUSEWAzlVqQtGTbAbkRmaZvQX8
 
 
 
@@ -154,3 +161,7 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 📃 License
 MIT License
+
+👨‍💻 Author
+Ankit Raj – GitHub
+
