@@ -1,10 +1,21 @@
 import os
+import platform
 import re
 import pdfkit
 from jinja2 import Environment, FileSystemLoader
 
-# ✅ Use Linux path for wkhtmltopdf (EC2)
-WKHTMLTOPDF_PATH = "/usr/bin/wkhtmltopdf"
+if platform.system() == "Windows":
+    WKHTMLTOPDF_PATH = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+elif platform.system() == "Linux":
+    WKHTMLTOPDF_PATH = "/usr/bin/wkhtmltopdf"
+else:
+    raise OSError("Unsupported OS for wkhtmltopdf configuration.")
+
+# Check if the path exists
+if not os.path.exists(WKHTMLTOPDF_PATH):
+    raise OSError(f"wkhtmltopdf not found at: {WKHTMLTOPDF_PATH}")
+
+# Configure pdfkit
 pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_PATH)
 def sanitize_filename(name):
     """Clean the filename to avoid illegal characters and keep it short."""
